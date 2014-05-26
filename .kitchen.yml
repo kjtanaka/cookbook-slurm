@@ -18,5 +18,10 @@ suites:
     data_bags_path: test/integration/default/data_bags
     encrypted_data_bag_secret_key_path: test/integration/default/data_bag_key
     run_list:
-      - recipe[munge::default]
-    attributes: {}
+      - recipe[slurm::default]
+    attributes: {
+      "slurm": {
+        "control_machine": "default-centos-65",
+        "node_name": "default-centos-65"
+      }
+    }
