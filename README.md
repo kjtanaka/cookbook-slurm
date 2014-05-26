@@ -27,10 +27,16 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['slurm']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['slurm']['control_machine']</tt></td>
+    <td>Text</td>
+    <td>Control Node</td>
+    <td><tt>linux0</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['slurm']['procs']</tt></td>
+    <td>Integer</td>
+    <td>Number of processor</td>
+    <td><tt>1</tt></td>
   </tr>
 </table>
 

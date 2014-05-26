@@ -10,7 +10,7 @@
 #
 ClusterName=linux
 ControlMachine=<%= @slurm_control_machine %>
-ControlAddr=10.39.1.51
+#ControlAddr=
 #BackupController=
 #BackupAddr=
 #
@@ -93,4 +93,4 @@ JobCompType=jobcomp/none
 #
 # COMPUTE NODES
 NodeName=<%= @slurm_node_name %> Procs=<%= @slurm_procs %> State=UNKNOWN
-PartitionName=debug Nodes=<%= @slurm_node_name %> Default=YES MaxTime=INFINITE State=UP
+PartitionName=batch Nodes=<%= @slurm_node_name %> Default=YES MaxTime=INFINITE State=UP
