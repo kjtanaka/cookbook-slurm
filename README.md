@@ -56,7 +56,6 @@ For example, if you have machines, `node0`(controller node), `node1`(compute nod
 
 ```json
 {
-  "name":"node0",
   "run_list": [
     "recipe[slurm]"
   ],
