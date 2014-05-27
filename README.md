@@ -4,6 +4,9 @@ This cookbook Installs [slurm](https://computing.llnl.gov/linux/slurm/).
 
 Requirements
 ------------
+#### Platforms
+Currently, it only supports CentOS 6.
+
 #### Cookbooks
 - yum-epel
 - build-essential
