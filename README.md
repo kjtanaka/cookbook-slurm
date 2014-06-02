@@ -13,6 +13,18 @@ Currently, it only supports CentOS 6.
 - selinux
 - munge, git: https://github.com/kjtanaka/cookbook-munge.git
 
+#### Data Bag
+
+The data bag `munge` and the item `secrets` need to be set like below. 
+Read [munge's README](https://github.com/kjtanaka/cookbook-munge) for more details.
+
+```
+{
+  "id": "secrets",
+  "munge_key": "y6ODGVRFr2mkhQpxv6HBMXk7nxNhZfJ3Y...."
+}
+```
+
 Attributes
 ----------
 #### slurm::default
