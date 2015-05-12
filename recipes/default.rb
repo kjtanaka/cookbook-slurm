@@ -28,16 +28,8 @@ slurm_state_save_location = node['slurm']['state_save_location']
 slurm_log_dir = node['slurm']['log_dir']
 
 # install necessary packages
-packages = %w[
-	rpm-build
-	readline
-	readline-devel
-	openssl-devel
-	munge-devel
-	pam-devel
-	perl-ExtUtils-MakeMaker
-	perl-DBI
-]
+packages = %w[ rpm-build readline readline-devel openssl-devel munge-devel
+	pam-devel perl-ExtUtils-MakeMaker perl-DBI ]
 
 packages.each do |pkg|
 	package pkg do
@@ -45,18 +37,15 @@ packages.each do |pkg|
 	end
 end
 
-slurm_download_url = "http://www.schedmd.com/download/latest/slurm-14.03.3-2.tar.bz2"
-
-remote_file "/tmp/slurm-14.03.3-2.tar.bz2" do
-	source slurm_download_url
+remote_file "/tmp/slurm-#{node['slurm']['version']}.tar.bz2" do
+	source node['slurm']['download_url']
 	mode "0644"
-	checksum "760320e81511198a7b723a00c9b96948"
 end
 
 execute "rpmbuild_slurm" do
 	user "root"
 	cwd "/tmp"
-	command "rpmbuild -ta slurm-14.03.3-2.tar.bz2"
+	command "rpmbuild -ta slurm-#{node['slurm']['version']}.tar.bz2"
 	creates "/root/rpmbuild/RPMS/x86_64/"
 end
 
