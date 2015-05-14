@@ -82,6 +82,7 @@ template "/etc/slurm/slurm.conf" do
 		:slurm_log_dir => slurm_log_dir
 	)
 	notifies :restart, "service[slurm]", :immediately
+  action :create_if_missing
 end
 
 service "slurm" do
